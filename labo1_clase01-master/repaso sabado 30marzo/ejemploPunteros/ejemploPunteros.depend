@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1553956814 source:c:\users\alumno\desktop\labo1_clase01-master\clase2_\repaso sabado 30marzo\ejemplopunteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesPunteros.h"
+
+1553956298 c:\users\alumno\desktop\labo1_clase01-master\clase2_\repaso sabado 30marzo\ejemplopunteros\funcionespunteros.h
+
+1553956892 source:c:\users\alumno\desktop\labo1_clase01-master\clase2_\repaso sabado 30marzo\ejemplopunteros\funcionespunteros.c
+	"funcionesPunteros.h"
+
+1553956892 source:c:\users\alumno\desktop\labo1_clase01-master\repaso sabado 30marzo\ejemplopunteros\funcionespunteros.c
+	"funcionesPunteros.h"
+
+1553957484 c:\users\alumno\desktop\labo1_clase01-master\repaso sabado 30marzo\ejemplopunteros\funcionespunteros.h
+
+1553957211 source:c:\users\alumno\desktop\labo1_clase01-master\repaso sabado 30marzo\ejemplopunteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesPunteros.h"
+
