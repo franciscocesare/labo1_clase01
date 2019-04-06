@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1554339018 source:/home/alumno/Documentos/clase05/clase05/main.c
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+
+1554331916 /home/alumno/Documentos/clase05/clase05/array.h
+
+1554340061 source:c:\users\alumno\desktop\clase05_tomasgiron\clase05\array.c
+	<stdio.h>
+
+1554340061 source:c:\users\alumno\desktop\clase05_tomasgiron\clase05\main.c
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+
+1554340061 c:\users\alumno\desktop\clase05_tomasgiron\clase05\array.h
+
+1554417675 source:c:\users\alumno\desktop\laboratorio-y-programacion-master\clase05_tomasgiron\clase05\array.c
+	<stdio.h>
+
+1554416933 source:c:\users\alumno\desktop\laboratorio-y-programacion-master\clase05_tomasgiron\clase05\main.c
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+
+1554340061 c:\users\alumno\desktop\laboratorio-y-programacion-master\clase05_tomasgiron\clase05\array.h
+
