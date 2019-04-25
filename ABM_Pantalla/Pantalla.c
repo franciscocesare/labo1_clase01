@@ -93,7 +93,7 @@ int pan_modifyFromID(Pantalla* pPantalla, int len,char* msgE)
             break;
         }
         auxID=atoi(bufferID);
-        posOfID=Pan_findID(pPantalla,len,auxID);
+        posOfID=pan_findID(pPantalla,len,auxID);
         if(posOfID==-1)
         {
             printf("\n----El ID no existe!----\n");
@@ -138,7 +138,7 @@ int pan_bajaLogica(Pantalla* pPantalla, int len,char* msgE)
             break;
         }
         auxID=atoi(bufferID);
-        posOfID=Pan_findID(pPantalla,len,auxID);
+        posOfID=pan_findID(pPantalla,len,auxID);
         if(posOfID==-1)
         {
             printf("\n----El ID no existe!----\n");
