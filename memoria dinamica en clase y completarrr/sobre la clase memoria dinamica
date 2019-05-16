@@ -1,0 +1,66 @@
+MEMORIA DINAMICA   MALLOC, Realloc y FREE
+***Malloc guarda un lugar en memoria (memory alocation, para una cant de bytes, si tengo el Sizeof puedo alojar enteros, flotantes, estructuras, lo quie sea)EN EL Heap
+me devuelve el puntero, que apunta al primer byte que reservo. 
+SI LO GUARDE COMO INT, TENER CUIDADO SI LO QUIERO USAR COMO FLOAT. PUEDE FALLAR
+***Lo que vamos a declarar en Malloc igual son entidades y estructuras grandes,tipo los auxiliares y variables chicas van a seguir en el stack
+malloc  en el primer lugar guarda informacion de que lugar es el proximo libre
+
+
+pAuxHeap = malloc (sizeof(int)*100); Asigno por malloc un lugar de memoria en el heap (el *100 es que me guarde 100 lugares de ese tipo, aqui INT)
+*(pAuxHeap+10) = 22(ya podria escribir o asignar algun valor a la variable), (el +10 le desplaza en memoria lo que ocupan 10 enteros, y va a guardar el proximo valor, en el lugar 11 en este caso)
+pAuxHeap = (int*)malloc (sizeof(int)*100) Casteo a un puntero int para evitar Warnings
+
+***Realloc, necesito saber donde empieza mi lugar en memoria.
+pAuxHeap = (int*)realloc (sizeof(int)*110);, devuelve adonde me mando porque al pedir mas lugar de memoria puede no ser contiguo. 
+ESTA LINEA DE ARRIBA ESTA MAL, HAY QUE GENERAR UN AUXILLIAR PARA GUARDAR EL VALOR QUE ME DEVUELVA Y NO PISAR CON UN NULL EL ORIGINAL, PORQUE ME CAGA, NO 
+VOLVES A ENCONTRAR EL PRIMER LUGAR QUE TENIAS GUARDADO.
+pAuxInt = (int*)realloc(pAuxHeap ,sizeof(int)*110);
+
+if (pAuxInt != NULL)
+{
+   pAuxHeap = pAuxInt;  ///aca usamos una Aux para guardar si era NULL o no, si no es NULL se guarda valor en pAuxHeap
+}
+return 0;
+
+
+Necesito saber adonde me mando. si me devuelve un puntero a null se rompe cuando lo uso. lo Primero que hay que hacer es ver que no sea Null.
+if (pAuxHeap != NULL)
+{
+   *(pAuxHeap+10) = 22;				
+}
+
+***A FREE le tengo que pasar el valor que me devolvio malloc, la administra
+free(pAuxHeap);
+
+¡¡¡¡CADA VEZ QUE HAGO UN TYPEDEF DE UNA ESTRUCTURA NO PUEDE FALTAR!!!!!!
+#ifndef ME ASEGURO QUE ESTE BLOQUE SOLO SEA COMPILADO UNA VEZ
+# define (lo defino)
+#endif 
+
+#ifndef ALUMNO_H
+#
+
+Typedef struct
+{
+  int id;
+  char nombre [QTY_NAME];
+  int legajo;
+  int status;
+}Alumno;
+#endif  
+
+Alumno* alumno_new();
+void alumno_delete(Alumno* this)//this es para seleccionar cual dentro de alumno
+int alumno_setId(Alumno* this, int value);
+int alumno_setLegajo (Alumno* this, int value);
+int alumno_setStatus (Alumno* this, int value);
+int alumno_setNombre (Alumno* this, char* value);
+int alumno_setLegajo (Alumno* this, int value);
+
+int alumno_getId(Alumno* this, int* value);
+int alumno_getLegajo (Alumno* this, int* value);
+int alumno_getStatus (Alumno* this, int* value);
+int alumno_getNombre (Alumno* this, char* value);
+
+(((LA FLECHA SOLAMENTE VA ASOCIADA A ESTE TIPO DE ARCHIVO. -> EN LOS SET Y EN LOS GET)))
+Alumno* alumno_newParametros(int Id, int legajo, int status, int nombre, int * legajo ) ///ESTE NO PUEDE FALTAR!!!
